@@ -1,0 +1,31 @@
+##################################################################################
+#       Build A Restful Api With Node.js Express & MongoDB | Rest Api Tutorial
+#       https://youtu.be/vjf774RKrLc
+##################################################################################
+
+
+npm install express nodemon
+npm start
+npm install mongoose
+npm install dotenv
+npm install body-parser
+npm install cors
+
+
+$$$$$$
+
+
+# find documents where description exists or not undefined
+db.post.find( { description: { $exists: true}  } )
+
+
+
+
+# Test on CodePen [https://codepen.io/pen/] (webClient)
+fetch('http://localhost:3000/posts')
+  .then( result => { 
+   return result.json(); 
+  })
+.then(data => {
+  console.log(data);
+})
