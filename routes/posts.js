@@ -11,6 +11,7 @@ const Post = require('../models/Post');
 // });
 
 router.get('/', async (req, res) =>{
+    console.log('GET');
     try {
         const posts = await Post.find();
         res.json(posts);
@@ -20,6 +21,7 @@ router.get('/', async (req, res) =>{
 });
 
 router.post('/', async (req, res) =>{
+    console.log('POST');
     //console.log(req.body);  //Requires a body-parser in main
     const post = new Post({
         title:req.body.title,
@@ -44,6 +46,7 @@ router.post('/', async (req, res) =>{
 
 //READ Post by Param
 router.get('/:postId', async (req, res) =>{
+    console.log('READ');
      console.log(req.params.postId);
     try {
         const post = await Post.findById(req.params.postId)
@@ -55,6 +58,7 @@ router.get('/:postId', async (req, res) =>{
 
 //Update
 router.patch('/:postId', async (req, res) =>{    
+    console.log('PATCH');
    try {
        const updPost = await Post.updateOne({_id:req.params.postId},
             {
@@ -72,6 +76,7 @@ router.patch('/:postId', async (req, res) =>{
 
 //Delete
 router.delete('/:postId', async (req, res) =>{
+    console.log('DELETE');
     console.log(req.params.postId);
    try {
        const postDel = await Post.deleteOne({_id:req.params.postId });

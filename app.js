@@ -21,6 +21,7 @@ app.use('/posts', postsRoute);
 
 //ROUTES
 app.get('/', (req, res) =>{
+    console.log('Root...');
     res.send('THis is home (root)');
 })
 
@@ -33,7 +34,7 @@ app.get('/', (req, res) =>{
 //Connect to DB
 //mongoose.connect(process.env.ATLAS_URI, { useNewUrlParser: true } () => {
 mongoose.connect(process.env.ATLAS_URI, () => {
-    console.log('Connected to Atlas');
+    console.log('Connected to Atlas (maybe)');  //<= NOT ACURRANCY
 });
 
 
